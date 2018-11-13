@@ -21,7 +21,7 @@ from numpy import random
 Nss = 1                # number of sea states
 Nim_ss = 1              # number of images per sea state
 Nl_max = 2              # max number of lines on an image
-Np = 10000              # number of pixels in the x and y directions for the image (only squares)
+Np = 20000              # number of pixels in the x and y directions for the image (only squares)
 
 #####################
 ## SPECTRUM INPUTS ## 
@@ -116,7 +116,7 @@ for Nss in range(Nss):
     
     SX_NC, SY_NC = elev_to_slope(KX, KY, S_dft_NC, offset=offset)
 #    Remove short wave length waves
-    Klim = 2
+    Klim = 1.5
     K = np.sqrt(KX**2 + KY**2)
     SX_NC[K>Klim] *= 0;
     SY_NC[K>Klim] *= 0;
